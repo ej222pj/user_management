@@ -2,5 +2,18 @@ extends layout
 
 block content
   #loginBlock
-    h1= title
-    p Welcome to #{title}
+    h1 Welcome to #{title}
+    != messages()
+    h3 Login
+    form(action="/", name="login", method="post")
+      span.label Username:
+      br
+      input(type="text", name="username")
+      br
+      span.label Password:
+      br
+      input(type="password", name="password")
+      br
+      input(type="submit", value="Login")
+    br
+    a(href="/register") Register
