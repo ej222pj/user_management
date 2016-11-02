@@ -2,7 +2,7 @@ extends layout
 
 block content
   #loginBlock
-    h1 Welcome to #{title}
+    h1 #{title}
     != messages()
     h3 Register
     form(action="/register", name="register", method="post")
