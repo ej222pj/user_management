@@ -17,6 +17,7 @@ router.post('/', function (req, res) {
     if (req.body.username == 'admin' && req.body.password == 'admin') {
       req.session.uniqueID = req.body.username;
     }
+    req.flash("info", "Wrong username or password!");
     res.redirect('/redirect');
   }
 });

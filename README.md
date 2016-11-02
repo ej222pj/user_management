@@ -1,6 +1,8 @@
 # user_management
 Simple user managing, mainly used for learning node
 
+nodemon DEBUG=user_management:* npm start
+
 https://gym-user-manager.herokuapp.com
 
 sudo service mongod start

@@ -6,7 +6,6 @@ router.get('/', function (req, res) {
         res.redirect('/gym');
     }
     else {
-        req.flash("info", "Wrong username or password!");
         res.redirect('/');
     }
 });

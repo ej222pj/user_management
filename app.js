@@ -6,12 +6,41 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sessions = require('express-session');
 var flash = require('connect-flash')
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
 
 var session;
+
+/*// Connection URL
+var url = 'mongodb://localhost:27017/myproject';
+
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+
+  db.close();
+});
+
+var insertDocuments = function(db, callback) {
+  // Get the documents collection
+  var collection = db.collection('documents');
+  // Insert some documents
+  collection.insertMany([
+    {a : 1}, {a : 2}, {a : 3}
+  ], function(err, result) {
+    assert.equal(err, null);
+    assert.equal(3, result.result.n);
+    assert.equal(3, result.ops.length);
+    console.log("Inserted 3 documents into the collection");
+    callback(result);
+  });
+}*/
 
 // Routes
 var index = require('./routes/index');
 var redirect = require('./routes/redirect');
+var register = require('./routes/register');
 var logout = require('./routes/logout');
 var gym = require('./routes/gym');
 var users = require('./routes/users');
@@ -43,6 +72,7 @@ app.use(function (req, res, next) {
 
 // Routes
 app.use('/', index);
+app.use('/register', register);
 app.use('/redirect', redirect);
 app.use('/logout', logout);
 app.use('/gym', gym);

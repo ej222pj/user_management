@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  #loginBlock
+    h1 Welcome to #{title}
+    != messages()
+    h3 Register
+    form(action="/register", name="register", method="post")
+      span.label Username:
+      br
+      input(type="text", name="username", placeholder="Length: 2-25", required)
+      br
+      span.label Password:
+      br
+      input(type="password", name="password", placeholder="Use Uniqe and long password" required)
+      br
+      span.label Repeat Password:
+      br
+      input(type="password", name="repeatpassword", required)
+      br
+      span.label Email:
+      br
+      input(type="email", name="email", placeholder="Enter your email", required)
+      br
+      span.label Gym Name:
+      br
+      input(type="text", name="gymname", placeholder="Length: 2-25", required)
+      br
+      input(type="submit", value="Register")
+    br
+    a(href="/") Back To Login
