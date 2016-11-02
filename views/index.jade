@@ -8,11 +8,11 @@ block content
     form(action="/", name="login", method="post")
       span.label Username:
       br
-      input(type="text", name="username")
+      input(type="text", name="username", placeholder="Case Sensitive", required)
       br
       span.label Password:
       br
-      input(type="password", name="password")
+      input(type="password", name="password", required)
       br
       input(type="submit", value="Login")
     br
