@@ -40,6 +40,7 @@ router.post('/', function (req, res) {
 
         if (req.body.username == username && req.body.password == password) {
           req.session.uniqueID = username;
+          req.session.gymNameSession = docs[0].gymname;
           res.redirect('/redirect');
         } else {
           req.flash("info", "Wrong username or password!");

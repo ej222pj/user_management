@@ -16,6 +16,10 @@ footer {
   transform: translate(-50%, -50%);
 }
 
+p {
+  margin: 2px;
+}
+
 input {
   margin: 5px;
 }

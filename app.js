@@ -43,6 +43,7 @@ var redirect = require('./routes/redirect');
 var register = require('./routes/register');
 var logout = require('./routes/logout');
 var gym = require('./routes/gym');
+var add = require('./routes/add');
 var users = require('./routes/users');
 
 var app = express();
@@ -76,6 +77,7 @@ app.use('/register', register);
 app.use('/redirect', redirect);
 app.use('/logout', logout);
 app.use('/gym', gym);
+app.use('/gym/add', add)
 app.use('/users', users);
 
 // catch 404 and forward to error handler

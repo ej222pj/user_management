@@ -68,8 +68,8 @@ router.post('/', function (req, res) {
           });
         });
       });
-    req.flash("info", "Registration was successfull, please login!");
-    res.redirect('/');
+      req.flash("info", "Registration was successfull, please login!");
+      res.redirect('/');
     } else {
       req.flash("info", "Something went wrong, try again!");
       res.redirect('/register');

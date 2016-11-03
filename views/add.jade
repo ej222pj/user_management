@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  #loginBlock
+    h1 Add New Member!
+    != messages()
+    br
+    form(action="/gym/add", name="add", method="post")
+      span.label First Name:
+      br
+      input(type="text", name="firstname", placeholder="Length: 1-25", required)
+      br
+      span.label Last Name:
+      br
+      input(type="text", name="lastname", placeholder="Length: 1-25", required)  
+      br
+      span.label Birth Date:
+      br
+      input(type="date", name="birthdate", required)    
+      br
+      span.label Email:
+      br
+      input(type="email", name="email", placeholder="Enter your email", required)
+      br
+      span.label Gender:
+      p Male:
+        input(type="radio", name="gender", value="Male", checked)
+      p Female:
+        input(type="radio", name="gender", value="Female")
+      p Other:
+        input(type="radio", name="gender", value="Other")
+      br
+      span.label Status:
+      p Active:
+        input(type="radio", name="status", value="Active", checked)
+      p Inactive:
+        input(type="radio", name="status", value="Inactive")
+      br
+      input(type="submit", value="Add new member")
+    a(href="/gym/") Back
